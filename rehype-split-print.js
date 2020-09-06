@@ -23,18 +23,16 @@ module.exports = function rehypeClean(options) {
 
 		function onelement(element) {
 			if (
-				element.tagName === 'img' &&
-				!element.properties.hasOwnProperty('alt') &&
-				element.properties.hasOwnProperty('src') &&
-				element.properties.src === ''
+				element.type === 'element' &&
+				element.tagName === 'p' &&
+				element.children.length === 1 &&
+				element.children[0].type === 'text' &&
+				element.children[0].value.match(/<—{5,}>/)
 			) {
-				//console.log(element)
-				delete element.properties.src
-				element.tagName = 'br'
-				//console.log(element)
+				element.children = []
+				element.tagName = 'div'
+				element.properties.className = ['break']
 			}
-
-			//element.children = parseHtml.parse(result).children
 		}
 	}
 }

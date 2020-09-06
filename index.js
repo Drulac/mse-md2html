@@ -37,6 +37,7 @@ module.exports = (
 		'remark-smiles': require('remark-smiles'),
 		'rehype-new-line': require('./rehype-new-line.js'),
 		'rehype-img-suit': require('./rehype-img-suit.js'),
+		'rehype-split-print': require('./rehype-split-print.js'),
 		'rehype-smiles': require('rehype-smiles'),
 		'lo-math': require('rehype-lo-math'),
 		'remark-attr': require('remark-attr'),
