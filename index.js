@@ -60,6 +60,7 @@ module.exports = (
 
 	return (md) => {
 		md = md
+			.replace(/oe/g, 'œ')
 			.replace(
 				/!\[([^\]]*)\]\(([^)]+)\)/gm,
 				(match, p1, p2, p3, offset, string) => {

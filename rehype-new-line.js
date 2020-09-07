@@ -31,6 +31,7 @@ module.exports = function rehypeClean(options) {
 				//console.log(element)
 				delete element.properties.src
 				element.tagName = 'br'
+				element.properties.className = ['image-break']
 				//console.log(element)
 			}
 
